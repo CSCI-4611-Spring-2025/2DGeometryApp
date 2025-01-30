@@ -3,7 +3,7 @@
  * Please do not distribute beyond the CSci-4611 course
  */
 
-import { ExampleApp } from './ExampleApp'
+import { GeometryApp } from './GeometryApp'
 
-const app = new ExampleApp();
+const app = new GeometryApp();
 app.start();
