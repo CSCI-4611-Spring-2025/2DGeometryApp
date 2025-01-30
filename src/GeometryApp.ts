@@ -10,7 +10,7 @@ export class GeometryApp extends gfx.GfxApp
 {   
     private enableWireframe = true;
     private raindrop : gfx.Mesh2;
-    private raindrops = [];
+    //private raindrops = [];
  
     // --- Create the ExampleApp class ---
     constructor()
@@ -26,7 +26,7 @@ export class GeometryApp extends gfx.GfxApp
         let gl  = this.renderer.gl;
 
         this.raindrop = gfx.Geometry2Factory.createRect(0.5, 0.5); 
-        //this.raindrop.material.texture = new gfx.Text("Abc",64,64,'25px Helvetica','red'); 
+        this.raindrop.material.texture = new gfx.Text("Abc",64,64,'25px Helvetica','red'); 
         this.raindrop.material.color = gfx.Color.RED;
         this.scene.add(this.raindrop);
 
@@ -36,39 +36,39 @@ export class GeometryApp extends gfx.GfxApp
         rect.material.color = gfx.Color.RED;
         rect.position = new gfx.Vector2(-0.5, 0.5);
         rect.scale = new gfx.Vector2(0.5, 0.5);
-        //this.scene.add(rect);
-        //this.createWireframe(rect);
+        this.scene.add(rect);
+        this.createWireframe(rect);
 
         // Circle
         let circle = gfx.Geometry2Factory.createCircle(0.5, 20);;
         circle.material.color = gfx.Color.RED;
         circle.position = new gfx.Vector2(0.5, 0.5);
         circle.scale = new gfx.Vector2(0.5, 0.5);
-        //this.scene.add(circle);
-        //this.createWireframe(circle);
+        this.scene.add(circle);
+        this.createWireframe(circle);
 
         // Pacman
         let pacman = gfx.Geometry2Factory.createPieSlice(0.5, Math.PI/4.0, 7.0*Math.PI/4.0, 0.2);
         pacman.material.color = gfx.Color.RED;
         pacman.position = new gfx.Vector2(-0.5, -0.5);
         pacman.scale = new gfx.Vector2(0.5, 0.5);
-        //this.scene.add(pacman);
-        //this.createWireframe(pacman);
+        this.scene.add(pacman);
+        this.createWireframe(pacman);
         
         // Curve
         let curve = this.createCurve();
         curve.material.color = gfx.Color.RED;
         curve.position = new gfx.Vector2(0.5, -0.5);
         curve.scale = new gfx.Vector2(0.5, 0.35);
-        //this.scene.add(curve);
-        //this.createWireframe(curve);
+        this.scene.add(curve);
+        this.createWireframe(curve);
 
         // Triangle Mesh
         let pumpkin = this.createPumpkinFace();
         pumpkin.material.color = gfx.Color.BLUE;
         pumpkin.scale = new gfx.Vector2(0.5, 0.35);
-        //this.scene.add(pumpkin);
-        //this.createWireframe(pumpkin);
+        this.scene.add(pumpkin);
+        this.createWireframe(pumpkin);
     }
 
     
